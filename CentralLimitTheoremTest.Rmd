@@ -1,0 +1,151 @@
+---
+title: "Week4HomeWork6306"
+author: "Rajeev"
+date: "June 6, 2016"
+output: html_document
+---
+```{r}
+
+#### Samples From Normal Population
+## Pick random sample of size 70 ,mean 200 standard deviation 20 from normal population.
+p1<- rnorm(70, mean=200,sd=20)
+#Original Sample : This will be treated as population.
+p1
+# Mean of Population
+mean(p1)
+# Standard Deviation of Population
+sd(p1)
+```
+
+
+```{r}
+#Initialize Bootstrap Sample Arrays
+bootstraparray1 <- numeric(10000)
+
+#Randomly Pick sample size of 10000 records from Population with replacement 
+for (i in 1:10000)
+{
+ s1 <- sample(p1,size = length(10000),replace = TRUE)
+ 
+ #Store Mean of individual sample in array.
+ bootstraparray1[i]=mean(s1)
+}
+
+# Calculate Average of Mean of samples. It should be close to Mean of Population
+
+mean(bootstraparray1)
+sd(bootstraparray1)
+hist(bootstraparray1)
+
+## Mean of Original Population is close to Mean of average of samples.
+```
+
+
+```{r}
+## Pick random sample of size 40 ,mean 100 standard deviation 10 from normal population.
+p2<- rnorm(40, mean=20,sd=2)
+#Original Sample : This will be treated as population.
+p2
+# Mean of Population
+mean(p2)
+# Standard Deviation of Population
+sd(p2)
+```
+
+
+```{r}
+#Initialize Bootstrap Sample Arrays
+bootstraparray2 <- numeric(10000)
+
+#Randomly Pick sample size of 10000 records from Population with replacement 
+for (i in 1:10000)
+{
+ s2 <- sample(p2,size = length(10000),replace = TRUE)
+ 
+ #Store Mean of individual sample in array.
+ bootstraparray2[i]=mean(s2)
+}
+
+# Calculate Average of Mean of samples. It should be close to Mean of Population
+
+mean(bootstraparray2)
+sd(bootstraparray2)
+hist(bootstraparray2)
+
+## Mean of Original Population is close to Mean of average of samples.
+```
+
+
+
+```{r}
+#### Samples From Exponential Population
+## Pick random sample from exponential population.
+p3<- rexp(40)
+#Original Sample : This will be treated as population.
+p3
+# Mean of Population
+mean(p3)
+# Standard Deviation of Population
+sd(p3)
+```
+
+```{r}
+#Initialize Bootstrap Sample Arrays
+bootstraparray3 <- numeric(10000)
+
+#Randomly Pick sample size of 10000 records from Population with replacement 
+for (i in 1:10000)
+{
+ s3 <- sample(p3,size = length(10000),replace = TRUE)
+ 
+ #Store Mean of individual sample in array.
+ bootstraparray3[i]=mean(s3)
+}
+
+# Calculate Average of Mean of samples. It should be close to Mean of Population
+
+mean(bootstraparray3)
+sd(bootstraparray3)
+hist(bootstraparray3)
+
+## Mean of Original Population is close to Mean of average of samples.
+```
+
+
+```{r}
+## Pick random sample of size 80 from exponential population.
+p4<- rexp(80)
+#Original Sample : This will be treated as population.
+p4
+# Mean of Population
+mean(p4)
+# Standard Deviation of Population
+sd(p4)
+```
+
+
+```{r}
+#Initialize Bootstrap Sample Arrays
+bootstraparray4 <- numeric(10000)
+
+#Randomly Pick sample size of 10000 records from Population with replacement 
+for (i in 1:10000)
+{
+ s4 <- sample(p4,size = length(10000),replace = TRUE)
+ 
+ #Store Mean of individual sample in array.
+ bootstraparray4[i]=mean(s4)
+}
+
+# Calculate Average of Mean of samples. It should be close to Mean of Population
+
+mean(bootstraparray4)
+sd(bootstraparray4)
+hist(bootstraparray4)
+
+## Mean of Original Population is close to Mean of average of samples.
+```
+
+#Conclusion
+####This bootstrap experiment proves the central limit theorem. As we see average of sample means tends to converge at poulation mean. 
+
