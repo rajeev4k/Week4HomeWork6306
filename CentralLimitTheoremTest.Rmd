@@ -2,7 +2,9 @@
 title: "Week4HomeWork6306"
 author: "Rajeev"
 date: "June 6, 2016"
-output: html_document
+output:   
+    html_document:
+    keep_md: yes
 ---
 ```{r}
 
@@ -142,6 +144,8 @@ for (i in 1:10000)
 mean(bootstraparray4)
 sd(bootstraparray4)
 hist(bootstraparray4)
+
+sessionInfo()
 
 ## Mean of Original Population is close to Mean of average of samples.
 ```
